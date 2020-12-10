@@ -12,8 +12,8 @@
 /**
  * Check if 2 numbers sum to targetSum in an array
  * runtime: O(n) | space: O(n)
- * @param {array} array 
- * @param {number} targetSum 
+ * @param {Array} array 
+ * @param {Number} targetSum 
  */
 function twoNumberSum(array, targetSum) {
   let store = {};
@@ -35,8 +35,8 @@ function twoNumberSum(array, targetSum) {
 /**
  * Check if 2 numbers sum to targetSum in an array
  * runtime: O(nlog(n)) | space: O(1)
- * @param {array} array 
- * @param {number} targetSum 
+ * @param {Array} array 
+ * @param {Number} targetSum 
  */
 function twoNumberSumOnlogn(array, targetSum) {
 	array = array.sort((a, b) => {
