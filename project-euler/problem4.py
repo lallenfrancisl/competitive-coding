@@ -1,17 +1,11 @@
-palindrome = []
-for i in range(110, 1000, 11):
-    for j in range(100, 1000):
-        product = i * j
-        if str(product) == str(product)[::-1]:
-            palindrome.append(product)
+"""
+Reference Link: https://www.geeksforgeeks.org/largest-palindrome-which-is-product-of-two-n-digit-numbers-set-2/
 
-palindrome.sort()
-
-tries = input()
-
-for k in range(tries):
-    inp = input()
-    i = 0
-    while palindrome[i] < inp:
-        i += 1
-    print(palindrome[i-1])
+"""
+max_palindrome = 0
+for i in range(999, 101, -1):
+    for j in range(990, 101, -11):
+        if (i * j) > max_palindrome and str(i * j) == str(i * j)[::-1]:
+            max_palindrome = i * j
+print(max_palindrome)
+        
