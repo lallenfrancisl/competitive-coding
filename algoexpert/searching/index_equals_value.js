@@ -6,6 +6,9 @@
 
  /**
   * Find the lowest index at which the index equals the value
+  * Time: O(log(n))
+  * Space: O(1)
+  * 
   * @param {Array} array 
   */
 function indexEqualsValue(array) {

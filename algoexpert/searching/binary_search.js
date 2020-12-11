@@ -6,6 +6,9 @@
 
  /**
   * Search a sorted array using binary search
+  * Time: O(log(n))
+  * Space: O(1)
+  * 
   * @param {Array} array 
   * @param {Number} target 
   */

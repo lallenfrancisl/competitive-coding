@@ -10,9 +10,10 @@
  */
 
 
-
 /**
  * Find the three largest numbers in an array
+ * Time: O(n)
+ * Space: O(1)
  * @param {Array} array 
  */
 function findThreeLargestNumbers(array) {
