@@ -11,6 +11,10 @@
 /**
  * Find the largest range in a given array of integers. The array can be sorted or
  * unsorted.
+ * 
+ * Time: O(n)
+ * Space: O(n)
+ * 
  * @param {Array} array 
  */
 function largestRange(array) {
