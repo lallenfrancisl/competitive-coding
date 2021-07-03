@@ -3,7 +3,7 @@
 ## Arrays
 
 - [x] [Sorted Squared Array](arrays/sorted_squared_arrays.js)
-- [ ] Non-Constructible Change
+- [x] [Non-Constructible Change](arrays/non_constructible_change.js)
 - [ ] Tournament Winner
 - [x] [Two Number Sum](arrays/two_sums.js)
 - [x] [Validate Subsequence](arrays/validate_subsequence.js)
