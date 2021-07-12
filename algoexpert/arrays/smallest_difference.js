@@ -8,50 +8,39 @@
  */
 
 /**
- * Finds a pair of integers such that the absolute difference
- * between them is smallest.
+ * Finds a pair of integers each from the two arrays such that
+ * the absolute difference between them is smallest.
  *
  * Time: O(nlog(n)) + O(mlog(m))
  * Space: O(1)
- * @param {Array} arrayOne
- * @param {Array} arrayTwo
+ * @param {number[]} arrayOne
+ * @param {number[]} arrayTwo
+ * @returns {number[]} pair of numbers that produce smallest difference
  */
-function smallestDifference(arrayOne, arrayTwo) {
-  arrayOne = arrayOne.sort(compare);
-  arrayTwo = arrayTwo.sort(compare);
+const smallestDifference = (arrayOne, arrayTwo) => {
+  arrayOne.sort((a, b) => a - b);
+  arrayTwo.sort((a, b) => a - b);
 
-  let num1 = arrayOne[0],
-    num2 = arrayTwo[0],
-    smallestDiff = Infinity;
+  let absDiff = -Infinity, smallestDiff = Infinity,
+    smallestPair = [0, 0], idx1 = 0, idx2 = 0;
+  while (idx1 < arrayOne.length && idx2 < arrayTwo.length) {
+    absDiff = Math.abs(arrayOne[idx1] - arrayTwo[idx2]);
 
-  let loopIndex1 = 0,
-    loopIndex2 = 0;
-  while (loopIndex1 < arrayOne.length && loopIndex2 < arrayTwo.length) {
-    let absDiff = Math.abs(arrayOne[loopIndex1] - arrayTwo[loopIndex2]);
+    if (absDiff === 0) return [arrayOne[idx1], arrayTwo[idx2]];
 
     if (absDiff < smallestDiff) {
-      num1 = arrayOne[loopIndex1];
-      num2 = arrayTwo[loopIndex2];
       smallestDiff = absDiff;
+      smallestPair = [arrayOne[idx1], arrayTwo[idx2]];
     }
 
-    if (absDiff === 0) {
-      break;
-    } 
-    else if (
-      arrayOne[loopIndex1] < arrayTwo[loopIndex2] &&
-      loopIndex1 < arrayOne.length - 1
-    ) {
-      loopIndex1 += 1;
-    } 
-    else {
-      loopIndex2 += 1;
+    if (arrayOne[idx1] < arrayTwo[idx2]) {
+      idx1 += 1;
+    } else {
+      idx2 += 1;
     }
   }
 
-  return [num1, num2];
+  return smallestPair;
 }
 
-function compare(a, b) {
-  return a - b;
-}
+exports.smallestDifference = smallestDifference;
