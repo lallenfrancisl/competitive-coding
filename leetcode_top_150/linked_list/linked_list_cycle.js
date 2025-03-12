@@ -1,9 +1,3 @@
-/**
- */
-/**
- * @param {ListNode} head
- * @return {boolean}
- */
 var hasCycle = function (head) {
     let slow = head;
     let fast = head?.next || null;
@@ -20,10 +14,3 @@ var hasCycle = function (head) {
     return false;
 };
 
-/**
- * @param {number} val
- */
-function ListNode(val) {
-    this.val = val;
-    this.next = null;
-}
